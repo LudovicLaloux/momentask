@@ -16,3 +16,4 @@ A habit tracking application built with FastAPI and Next.js.
 - **TypeScript** - Type safety
 - **NextUI** - Component library
 - **Tailwind CSS** - Styling
+
