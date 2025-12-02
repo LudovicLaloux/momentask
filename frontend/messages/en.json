@@ -1,0 +1,31 @@
+{
+    "common": {
+        "cancel": "Cancel",
+        "create": "Create",
+        "creating": "Creating...",
+        "delete": "Delete",
+        "edit": "Edit",
+        "save": "Save"
+    },
+    "habits": {
+        "title": "My Habits",
+        "newHabit": "New Habit",
+        "noHabits": "No habits yet. Create your first one!",
+        "name": "Name",
+        "namePlaceholder": "e.g., Morning exercise",
+        "description": "Description",
+        "descriptionPlaceholder": "Optional description...",
+        "backToHabits": "Back to habits"
+    },
+    "calendar": {
+        "days": {
+            "sun": "Sun",
+            "mon": "Mon",
+            "tue": "Tue",
+            "wed": "Wed",
+            "thu": "Thu",
+            "fri": "Fri",
+            "sat": "Sat"
+        }
+    }
+}

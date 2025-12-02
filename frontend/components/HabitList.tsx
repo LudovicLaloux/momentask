@@ -15,6 +15,7 @@ import {
 } from '@nextui-org/react'
 import { Habit } from '@/types'
 import { habitsApi } from '@/lib/api'
+import { useTranslations } from 'next-intl'
 
 interface Props {
     initialHabits: Habit[]
@@ -49,17 +50,20 @@ export default function HabitList({ initialHabits }: Props) {
         onClose()
     }
 
+    const t = useTranslations('habits')
+    const tCommon = useTranslations('common')
+
     return (
         <>
             <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-bold">My Habits</h1>
+                <h1 className="text-3xl font-bold">{t('title')}</h1>
                 <Button color="primary" onPress={onOpen}>
-                    + New Habit
+                    + {t('newHabit')}
                 </Button>
             </div>
 
             {habits.length === 0 ? (
-                <p className="text-gray-500">No habits yet. Create your first one!</p>
+                <p className="text-gray-500">{t('noHabits')}</p>
             ) : (
                 <ul className="space-y-4">
                     {habits.map((habit) => (
@@ -77,25 +81,25 @@ export default function HabitList({ initialHabits }: Props) {
 
             <Modal isOpen={isOpen} onClose={handleClose} backdrop="opaque">
                 <ModalContent>
-                    <ModalHeader>New Habit</ModalHeader>
+                    <ModalHeader>{t('newHabit')}</ModalHeader>
                     <ModalBody>
                         <Input
-                            label="Name"
-                            placeholder="e.g., Morning exercise"
+                            label={t('name')}
+                            placeholder={t('namePlaceholder')}
                             value={name}
                             onValueChange={setName}
                             autoFocus
                         />
                         <Textarea
-                            label="Description"
-                            placeholder="Optional description..."
+                            label={t('description')}
+                            placeholder={t('descriptionPlaceholder')}
                             value={description}
                             onValueChange={setDescription}
                         />
                     </ModalBody>
                     <ModalFooter>
                         <Button variant="light" onPress={handleClose}>
-                            Cancel
+                            {tCommon('cancel')}
                         </Button>
                         <Button
                             color="primary"
@@ -103,7 +107,7 @@ export default function HabitList({ initialHabits }: Props) {
                             isDisabled={!name.trim()}
                             isLoading={isSubmitting}
                         >
-                            Create
+                            {tCommon('create')}
                         </Button>
                     </ModalFooter>
                 </ModalContent>
