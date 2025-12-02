@@ -16,3 +16,7 @@ frontend/.env.local
 
 # OS
 .DS_Store
+
+postgres_data/
+
+CLAUDE.md
