@@ -1,12 +1,8 @@
 import { habitsApi } from '@/lib/api'
-import HabitList from '@/components/HabitList'
+import Dashboard from '@/components/Dashboard'
 
 export default async function HomePage() {
   const habits = await habitsApi.getAll()
 
-  return (
-    <main className="max-w-2xl mx-auto p-6">
-      <HabitList initialHabits={habits} />
-    </main>
-  )
+  return <Dashboard initialHabits={habits} />
 }
